@@ -12,7 +12,7 @@ public:
     JugadorHumano(string,int,char);
     void elegirCasilla(Tablero*&);
     void realizarJugada(int,int, Tablero*&);
-    virtual ~JugadorHumano();
+    ~JugadorHumano();
 private:
     string nombre;
     int puntos;

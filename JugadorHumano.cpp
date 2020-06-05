@@ -4,7 +4,7 @@
 #include<iostream>
 
 using namespace std;
-JugadorHumano::JugadorHumano(string nombre, int puntos, char marca){
+JugadorHumano::JugadorHumano(string nombre, int puntos, char marca):Jugador(nombre,puntos,marca){
         this->nombre=nombre;
         this->puntos=puntos;
         this->marca=marca;
@@ -21,7 +21,6 @@ void JugadorHumano:: elegirCasilla( Tablero*& tablero){
     cin>>y;
  	
     if(tablero->marcarCasilla(x,y)==true){
-    	cout << "ds";
         realizarJugada(x,y,tablero);
     }else{
         cout<<" Casilla ocupada"<<endl;

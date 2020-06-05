@@ -35,18 +35,13 @@ Tablero::~Tablero(){
 }
 		
 bool Tablero::marcarCasilla(int i,int j){
-	
 	if( i < 0 || i >= size || j < 0 || j>= size){
-		cout << "adsad\n";
 		return false;
 	}else{
-		cout << "adsad\n";
 		if(matriz[i][j]->getValue() == ' '){
-			cout << "adsad\n";
 			//matriz[i][j]->setValue(pValue);
 			return true;
 		}else{
-			cout << "adsad\n";
 			return false;
 		}
 	}

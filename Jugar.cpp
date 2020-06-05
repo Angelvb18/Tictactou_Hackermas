@@ -8,15 +8,21 @@ Jugar::Jugar()
 }
 void Jugar:: iniciarPartida(){
     int turno =0;
-    while(turno< 9 || validarGanador() != 3){
+	cout<<jugadorhumano->getNombre()<< " escogio marcar con: "<< jugadorhumano->getMarca()<<endl;
+	cout<<jugadorhumano2->getNombre()<< " escogio marcar con: "<< jugadorhumano2->getMarca()<<endl; 
+    while(validarGanador() == 3){
+    	cout << elejirGanador(tablero,jugadorhumano,jugadorhumano2);
        if (turno % 2 == 0) {
-         cout<<jugadorhumano->getNombre()<< " escogió marcar con: "<< jugadorhumano->getMarca()<<endl;
+       	cout << "Turno de " << jugadorhumano->getNombre() << endl;
          jugadorhumano->elegirCasilla(tablero);
+         tablero->printTablero(); 
+         
         }else {
-            cout<<jugadorhumano2->getNombre()<< " escogió marcar con: "<< jugadorhumano2->getMarca()<<endl; 
+        	cout << "Turno de " << jugadorhumano2->getNombre() << endl;
             jugadorhumano2->elegirCasilla(tablero);
+            tablero->printTablero();
         }
-
+		
        turno++;
 
        
@@ -26,6 +32,7 @@ void Jugar:: iniciarPartida(){
 int Jugar:: validarGanador(){
      int conJ1=0, conJ2=0;
      int punto=elejirGanador(tablero,jugadorhumano,jugadorhumano2);
+     
     if(punto==1){
         cout<<"Jugador 1 ha ganado "<<endl;
         conJ1++;
@@ -102,14 +109,13 @@ int Jugar::elejirGanador(Tablero* tablero , Jugador* j1, Jugador* j2 ){
             return 2;
 
         }
-        return 3;
-                 
+        return 3;  
                  
 }
         
   Jugar :: Jugar (Tablero* tableroenviado, Jugador* jugador1 , Jugador* jugador2){
 	
-	this->tablero=tablero ;
+	this->tablero=tableroenviado ;
 	this->jugadorhumano=jugador1;
 	this->jugadorhumano2=jugador2; 
 	

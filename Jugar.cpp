@@ -8,6 +8,7 @@ Jugar::Jugar()
 }
 void Jugar:: iniciarPartida(){
     int turno =0;
+    
     while(turno< 9 || validarGanador() != 3){
        if (turno % 2 == 0) {
          cout<<jugadorhumano->getNombre()<< " escogió marcar con: "<< jugadorhumano->getMarca()<<endl;

@@ -10,6 +10,7 @@ int main(int argc, char** argv) {
 	//apuntadores
 	Tablero* tablero = new Tablero();
 //	tablero->printTablero();
+
 	int menu =1;
 	while(menu!=3){
 		cout<<"Ingrese que quiere jugar: "<<endl ;
@@ -24,7 +25,7 @@ int main(int argc, char** argv) {
 			}
 			case 2 : {
 				string nombre1,nombre2 ;
-				char mar1,mar2;
+				char mar1=' ',mar2=' ';
 				cout <<"Ingrese el nombre del jugador 1 : "<< endl;
 				cin>>nombre1;
 				cout << "Ingrese la marca que desea (X/0): "<<endl;
@@ -37,9 +38,10 @@ int main(int argc, char** argv) {
 				}else{
 					mar2='X';
 				}
+				
 				Jugador* jugador2= new JugadorHumano(nombre2,0,mar2);
-                                Jugar* juego = new Jugar(tablero, jugador1, jugador2); 
-                                juego->iniciarPartida();
+                Jugar* juego = new Jugar(tablero, jugador1, jugador2); 
+                juego->iniciarPartida();
 				
 				
 				break;
@@ -49,6 +51,7 @@ int main(int argc, char** argv) {
 				break;
 			}
 		}
+	
 	}
 	
 	delete tablero;

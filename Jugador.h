@@ -16,7 +16,7 @@ public:
     void setPuntos(int);
     void setMarca(char);
     virtual void elegirCasilla(Tablero*&)=0;
-    void realizarJugada();
+    void realizarJugada(int ,int ,Tablero*&) ;
     
     virtual ~Jugador();
 protected:
